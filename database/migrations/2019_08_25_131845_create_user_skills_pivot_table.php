@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserExperiancesTable extends Migration
+class CreateUserSkillsPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateUserExperiancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_experiences', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('description');
-            $table->timestamps();
+        Schema::create('user_skills', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('skill_id');
+            $table->primary(['user_id', 'skill_id']);
         });
     }
 
@@ -28,6 +27,8 @@ class CreateUserExperiancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_experiences');
+        Schema::table('user_skills', function (Blueprint $table) {
+            //
+        });
     }
 }

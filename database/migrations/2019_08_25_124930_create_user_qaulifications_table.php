@@ -13,8 +13,10 @@ class CreateUserQaulificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_qaulifications', function (Blueprint $table) {
+        Schema::create('user_qualifications', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateUserQaulificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_qaulifications');
+        Schema::dropIfExists('user_qualifications');
     }
 }

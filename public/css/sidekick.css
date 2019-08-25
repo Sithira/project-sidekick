@@ -1,0 +1,19 @@
+/**
+* SideKick
+* Version 1
+*/
+
+.my-projects span {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.my-projects .wall {
+    border-right: 1px solid black;
+}
+
+.my-projects h3 {
+    text-align: center;
+    padding: 10px;
+}

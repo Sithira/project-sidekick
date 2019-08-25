@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectDocumentsTable extends Migration
+class CreateProjectSkillsPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateProjectDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_documents', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('project_skills', function (Blueprint $table) {
             $table->unsignedBigInteger('project_id');
-            $table->text('url');
-            $table->timestamps();
+            $table->unsignedBigInteger('skill_id');
+            $table->primary(['project_id', 'skill_id']);
         });
     }
 
@@ -28,6 +27,8 @@ class CreateProjectDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_documents');
+        Schema::table('project_skills', function (Blueprint $table) {
+            //
+        });
     }
 }
