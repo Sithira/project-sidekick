@@ -4,6 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Skill
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $users
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Skill extends Model
 {
 

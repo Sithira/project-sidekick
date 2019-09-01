@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'HomeController@index')->name('home');
+
+Route::resource('/profile/skills', 'user\ranking\UserSkillController');
+Route::resource('/profile/experience', 'user\ranking\UserExperienceController');
+Route::resource('/profile/qualification', 'user\ranking\UserSkillController');
