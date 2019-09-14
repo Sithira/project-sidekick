@@ -102,6 +102,16 @@ class User extends Authenticatable
     }
 
     /**
+     * Proposals
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function proposals()
+    {
+        return $this->hasMany(ProjectProposal::class);
+    }
+
+    /**
      * Get all user qualifications
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

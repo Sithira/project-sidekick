@@ -25,6 +25,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class UserExperience extends Model
 {
+
+    protected $fillable = ['title', 'description', 'user_id'];
+
     /**
      * Get the user belong to the user experience
      *

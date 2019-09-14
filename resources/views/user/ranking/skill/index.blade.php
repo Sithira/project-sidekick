@@ -34,7 +34,7 @@
     <script>
         $(document).ready(function () {
             $("#skill_select").select2({
-                tags: true,
+                // tags: true,
                 tokenSeparators: [",", " "]
             });
         });

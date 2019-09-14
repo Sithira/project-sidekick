@@ -17,8 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/profile', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/profile', 'HomeController@index')->name('home');
 
-Route::resource('/profile/skills', 'user\ranking\UserSkillController');
-Route::resource('/profile/experience', 'user\ranking\UserExperienceController');
-Route::resource('/profile/qualification', 'user\ranking\UserSkillController');
+    Route::resource('/profile/skills', 'user\ranking\UserSkillController');
+    Route::resource('/profile/experience', 'user\ranking\UserExperienceController');
+    Route::resource('/profile/qualifications', 'user\ranking\UserQualificationController');
+
+    Route::resource('/profile/projects', 'user\projects\ProjectController');
+});

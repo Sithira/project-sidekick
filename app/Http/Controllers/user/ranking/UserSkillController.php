@@ -44,8 +44,6 @@ class UserSkillController extends Controller
     public function store(Request $request)
     {
 
-        // todo: Add new tags.
-
         $skill = Skill::whereIn('id', $request->get('skills'));
 
         if (is_null($skill)) {

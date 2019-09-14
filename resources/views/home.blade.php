@@ -62,10 +62,10 @@
                 </div>
 
                 <div class="card-body text-info">
-                    <div class="btn btn-primary btn-block">
+                    <a href="{{ route('projects.create') }}" class="btn btn-primary btn-block">
                         <i class="fa fa-plus"></i>
                         Create new project
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

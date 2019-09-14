@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * App\Models\Project
@@ -36,6 +37,21 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
 
+    use SoftDeletes;
+
+    protected $fillable = [
+        'user_id',
+        'proposal_id',
+        'name',
+        'description',
+        'type',
+        'budget',
+        'accepted_on',
+        'expires_in',
+        'end_date',
+        'reference'
+    ];
+
     /**
      * Get project owner
      *
@@ -68,15 +84,6 @@ class Project extends Model
     }
 
     /**
-     * Get project statuses for the project
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function statuses() {
-        return $this->hasMany(ProjectStatus::class);
-    }
-
-    /**
      * Get all the documents that the project has
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -86,4 +93,13 @@ class Project extends Model
         return $this->hasMany(ProjectDocument::class);
     }
 
+    /**
+     * Proposals
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function proposals()
+    {
+        return $this->hasMany(ProjectProposal::class);
+    }
 }
