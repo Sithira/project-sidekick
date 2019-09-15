@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectProposal extends Model
+class Answer extends Model
 {
-
-    protected $fillable = ['project_id', 'user_id', 'budget', 'description'];
+    protected $fillable = ['question_id', 'body', 'likes', 'dislikes', 'is_answer'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -20,9 +19,13 @@ class ProjectProposal extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function project()
+    public function question()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Question::class);
     }
 
+    public function replies()
+    {
+        return $this->belongsTo(Reply::class);
+    }
 }

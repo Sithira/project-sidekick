@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectProposalsTable extends Migration
+class CreateAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateProjectProposalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_proposals', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('user_id');
-            $table->boolean('is_accepted')->default(0);
-            $table->float('budget')->default(0);
-            $table->text('description');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('question_id');
+            $table->text('body');
+            $table->boolean('is_answer')->default(0);
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateProjectProposalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_proposals');
+        Schema::dropIfExists('answers');
     }
 }

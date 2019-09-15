@@ -1,13 +1,13 @@
 1. User Exp, qualifications and Skills ✅
 
 2. Project CRUD
-    - Sharing features (like, dislike, share)
-    - Project proposal
-    - Project acceptance
+    - Sharing features (like, dislike, share) 🚫
+    - Project proposal ✅
+    - Project acceptance  ✅
 
 3. Question CRUD
-    - Sharing features (like, dislike, share)
-    - Comments
+    - Sharing features (like, dislike, share) ✅
+    - Comments ✅
 
 
-Recommended mechanism   
+Recommended mechanism 🤪🤪

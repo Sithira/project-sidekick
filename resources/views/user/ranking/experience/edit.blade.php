@@ -7,7 +7,6 @@
 
     <div class="row">
         <div class="col-6">
-
             @include('flash::message')
             @include('error-flash')
 
