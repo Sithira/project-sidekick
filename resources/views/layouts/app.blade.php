@@ -64,37 +64,18 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="{!! url('/forum') !!}">
                 <i class="fas fa-fw fa-comments"></i>
                 <span>Forum</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Components:</h6>
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
-                </div>
-            </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link collapsed" href="{!! url('/profile/questions') !!}">
                 <i class="fas fa-fw fa-question"></i>
                 <span>My Questions</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Custom Utilities:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Colors</a>
-                    <a class="collapse-item" href="utilities-border.html">Borders</a>
-                    <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                    <a class="collapse-item" href="utilities-other.html">Other</a>
-                </div>
-            </div>
         </li>
 
         <!-- Divider -->
@@ -102,7 +83,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Addons
+            My Squad Profile
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -110,34 +91,41 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
+                <span>Profile details</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Login Screens:</h6>
-                    <a class="collapse-item" href="login.html">Login</a>
-                    <a class="collapse-item" href="register.html">Register</a>
-                    <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Other Pages:</h6>
-                    <a class="collapse-item" href="404.html">404 Page</a>
-                    <a class="collapse-item" href="blank.html">Blank Page</a>
+                    <h6 class="collapse-header">Manage my profiles</h6>
+                    <a class="collapse-item" href="login.html">My Experience</a>
+                    <a class="collapse-item" href="register.html">My Qualifications</a>
+                    <a class="collapse-item" href="register.html">My Skills</a>
                 </div>
             </div>
         </li>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
 
-        <!-- Nav Item - Tables -->
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Work
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#projects"
+               aria-expanded="true" aria-controls="projects">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Projects and Proposals</span>
+            </a>
+            <div id="projects" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Current Projects</h6>
+                    <a class="collapse-item" href="login.html">My Projects</a>
+                    <a class="collapse-item" href="login.html">My Proposals</a>
+                </div>
+            </div>
         </li>
 
         <!-- Divider -->
@@ -418,6 +406,8 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="{!! url('js/jquery.easing.min.js') !!}"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 @yield('js')
