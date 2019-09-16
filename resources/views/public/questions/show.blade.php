@@ -8,18 +8,18 @@
                 <div class="col-6">
                     <div class="text-center">
                         {!! $question->likes !!}
-                        <br />
+                        <br/>
                         {!! Form::open(['method' => 'POST', 'url' => route('question.upvote', ['id' => $question->id])]) !!}
-                            {!! Form::submit('Upvote', ['class' => 'btn btn-primary btn-sm']) !!}
+                        {!! Form::submit('Upvote', ['class' => 'btn btn-primary btn-sm']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="text-center">
                         {!! $question->dislikes !!}
-                        <br />
+                        <br/>
                         {!! Form::open(['method' => 'POST', 'url' => route('question.downvote', ['id' => $question->id])]) !!}
-                            {!! Form::submit('Downvote', ['class' => 'btn btn-primary btn-sm']) !!}
+                        {!! Form::submit('Downvote', ['class' => 'btn btn-primary btn-sm']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -66,11 +66,11 @@
                                 {!! $reply->body !!}
                             </div>
                         </div>
-                        
+
                         <div class="mb-3"></div>
                     @endforeach
 
-                    <br />
+                    <br/>
 
                     <div class="card">
                         <div class="card-header">
@@ -81,7 +81,7 @@
                             {!! Form::open() !!}
                             <div class="form-group">
                                 {!! Form::label('body') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}
                             </div>
 
                             {!! Form::submit('Add comment', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
@@ -93,11 +93,11 @@
 
         </div>
 
-        <br />
+        <br/>
 
-{{--        <div class="col-2"></div>--}}
+        {{--        <div class="col-2"></div>--}}
         <div class="col-12">
-            <h4>Answers</h4>
+            <h2>Answers</h2>
 
             <div class="row">
                 <div class="col-2"></div>
@@ -105,6 +105,13 @@
                     @foreach($question->answers as $answer)
                         <div class="card {!! ($answer->is_answer == 1 ? 'border-success' : '') !!}">
                             <div class="card-body">
+
+                                @if($answer->is_answer)
+                                    <div class="badge badge-success">ANSWER</div>
+                                @endif
+
+                                <div class="mt-3"></div>
+
                                 [{!! $answer->user->name !!} said:]
                                 {!! $answer->body !!}
                             </div>
@@ -113,7 +120,7 @@
                         <div class="mb-3"></div>
                     @endforeach
 
-                    <br />
+                    <br/>
 
                     <div class="card">
                         <div class="card-header">
@@ -124,7 +131,7 @@
                             {!! Form::open() !!}
                             <div class="form-group">
                                 {!! Form::label('body') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}
                             </div>
 
                             {!! Form::submit('Add comment', ['class' => 'btn btn-primary btn-sm btn-block']) !!}

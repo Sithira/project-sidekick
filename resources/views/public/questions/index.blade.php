@@ -2,24 +2,19 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-6">
-            <h2>SideKick Forum</h2>
-        </div>
-
-        <div class="col-6">
-            <div class="float-right">
-                <a href="#" class="btn btn-primary btn-block btn-sm">
-                    Ask an Question
-                </a>
-            </div>
-        </div>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">CodeSquad Forum</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-download fa-sm text-white-50"></i>
+            Ask an Question
+        </a>
     </div>
 
     <div class="mt-5"></div>
-    
+
     <div class="row">
-        <div class="col-4">
+        <div class="col-3">
             <h4>Categories</h4>
 
             <ul class="list-group">
@@ -29,12 +24,12 @@
             </ul>
         </div>
 
-        <div class="col-8">
+        <div class="col-9">
 
-            <h4>New Questions on SideKick</h4>
+            <h4>New Questions on CodeSquad</h4>
 
             @foreach($questions as $question)
-                <div class="card">
+                <div class="card shadow mb-5 bg-white rounded">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-4">
@@ -42,7 +37,7 @@
                                     <div class="col-6">
                                         <div class="text-center">
                                             {!! $question->likes !!}
-                                            <br />
+                                            <br/>
                                             <span>
                                             Likes
                                         </span>
@@ -51,7 +46,7 @@
                                     <div class="col-6">
                                         <div class="text-center">
                                             {!! $question->likes !!}
-                                            <br />
+                                            <br/>
                                             <span>
                                             Dislikes
                                         </span>

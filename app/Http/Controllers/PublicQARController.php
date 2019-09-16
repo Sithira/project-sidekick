@@ -39,7 +39,7 @@ class PublicQARController extends Controller
 
     public function byCategory($category)
     {
-        return 'fuck you';
+        return 'bilal sirisena';
     }
 
     public function acceptAsAnswer($id, $subId)

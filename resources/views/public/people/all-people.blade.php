@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Everyone on SideKick</h2>
+    <h2>Everyone on CodeSquad</h2>
 
     <div class="row">
         <div class="col-12">

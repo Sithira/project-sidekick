@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>All Projects on SideKick</h2>
+    <h2>All Projects on CodeSquad</h2>
 
     <div class="row">
         <div class="col-12">
@@ -12,7 +12,7 @@
                             {!! $project->name !!}
 
                             <div class="float-right">
-                                <a class="btn btn-sm btn-primary" href="{!! route('proposals.create') !!}">Make proposal</a>
+                                <a class="btn btn-sm btn-primary" href="{!! route('proposals.create', ['id' => $project->id]) !!}">Make proposal</a>
                             </div>
                         </div>
 
