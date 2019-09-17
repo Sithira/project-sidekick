@@ -57,4 +57,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/profile/projects/{id}/proposals/{subId}', 'user\projects\ProposalController@approveOrReject')
         ->name('approveOrRejectProposal');
     Route::resource('/profile/projects', 'user\projects\ProjectController');
+
+    // add - my proposals
 });
