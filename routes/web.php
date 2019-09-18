@@ -17,8 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('projects', 'web\ProjectsController@index');
-Route::get('people', 'web\PeopleController@index');
+Route::get('projects', 'web\ProjectsController@index')->name('public-projects');
+Route::get('projects/{id}', 'web\ProjectsController@show')->name('pub-proj-show');
+
+Route::get('people', 'web\PeopleController@index')->name('public-people');
+Route::get('people/{id}', 'web\PeopleController@show')->name('single-person');
 
 // forum
 Route::get('/forum', 'PublicQARController@index');

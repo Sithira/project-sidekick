@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 
 class PeopleController extends Controller
 {
+
     public function index()
     {
 
@@ -61,5 +62,12 @@ class PeopleController extends Controller
         }
 
         return view('public.people.all-people', compact('people'));
+    }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id)->load(['projects', 'questions', 'replies', 'answers']);
+
+        return view('public.people.single-person', compact('user'));
     }
 }

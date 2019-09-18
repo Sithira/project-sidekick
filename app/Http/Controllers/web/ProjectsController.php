@@ -17,4 +17,11 @@ class ProjectsController extends Controller
         return view('public.projects.all-projects', compact('projects'));
     }
 
+    public function show($id)
+    {
+        $project = Project::findOrFail($id)->load(['proposals', 'documents']);
+
+        return view('public.projects.single-project', compact('project'));
+    }
+
 }
