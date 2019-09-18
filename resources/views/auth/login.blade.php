@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>CodeSquad Login</title>
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -90,21 +90,21 @@
                                                 {{ __('Login') }}
                                             </button>
 
-                                            @if (Route::has('password.request'))
-                                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
-                                                </a>
-                                            @endif
+{{--                                            @if (Route::has('password.request'))--}}
+{{--                                                <a class="btn btn-link" href="{{ route('password.request') }}">--}}
+{{--                                                    {{ __('Forgot Your Password?') }}--}}
+{{--                                                </a>--}}
+{{--                                            @endif--}}
                                         </div>
                                     </div>
                                 </form>
 
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    <a class="small" href="{{ route('password.request') }}">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <a class="small" href="{!! route('register') !!}">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

@@ -49,6 +49,9 @@ Route::group(['middleware' => 'auth'], function() {
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/profile', 'HomeController@index')->name('home');
 
+    Route::get('/profile/questions', 'ProfileController@myQuestions');
+    Route::get('/profile/proposals', 'ProfileController@myProposals');
+
     Route::resource('/profile/skills', 'user\ranking\UserSkillController');
     Route::resource('/profile/experience', 'user\ranking\UserExperienceController');
     Route::resource('/profile/qualifications', 'user\ranking\UserQualificationController');
