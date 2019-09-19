@@ -22,6 +22,9 @@ class PeopleController extends Controller
 
             $dislikeCount = 0;
 
+            $experiencesCount = 0;
+            $qualificationsCount = 0;
+
             $questions = $person->questions;
 
             $answers = $person->answers;
@@ -29,6 +32,10 @@ class PeopleController extends Controller
             $replies = $person->replies;
 
             $proposals = $person->proposals->where('is_accepted', 1);
+
+            $experiences = $person->experience;
+
+            $qualifications = $person->qualifications;
 
 
             foreach ($questions as $question) {
@@ -56,7 +63,16 @@ class PeopleController extends Controller
                 }
             }
 
-            $totalPoints = ($additional + $likeCount) - $dislikeCount;
+            // points calculation for un verified materials
+            foreach ($experiences as $experience) {
+                $experiencesCount = $experiencesCount + 0.5;
+            }
+
+            foreach ($qualifications as $qualification) {
+                $qualificationsCount = $qualificationsCount + 0.5;
+            }
+
+            $totalPoints = ($additional + $likeCount + $qualificationsCount + $experiencesCount) - $dislikeCount;
 
             $person->points = $totalPoints;
         }

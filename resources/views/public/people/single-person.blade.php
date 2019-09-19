@@ -44,7 +44,9 @@
                                     @foreach($user->answers as $answer)
                                         <tr>
                                             <td>
-                                                <strong>#</strong> {!! $answer->question->title !!} <strong></strong>
+                                                <a href="{!! route('forum.by-q-id', ['id' => $answer->question->id]) !!}">
+                                                    <strong>#</strong> {!! $answer->question->title !!} <strong></strong>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
