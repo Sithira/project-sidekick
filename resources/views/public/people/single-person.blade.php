@@ -18,7 +18,7 @@
                             <h6>About</h6>
                             <p>Name: {!! $user->name !!}</p>
                             <p>Email: {!! $user->email !!}</p>
-                            <p>Member since: {!! \App\Models\User::find(1)->created_at->toDateString() !!}</p>
+                            <p>Member since: {!! $user->created_at->toDateString() !!}</p>
                         </div>
                         <div class="col-md-6">
                             <h6>My Skills</h6>
