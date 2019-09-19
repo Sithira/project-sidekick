@@ -47,10 +47,10 @@ class UserSkillController extends Controller
         $skill = Skill::whereIn('id', $request->get('skills'));
 
         if (is_null($skill)) {
-            $skill = Skill::create($request->all());
+            return back();
         }
 
-        auth()->user()->skills()->sync($skill);
+        auth()->user()->skills()->sync($skill->get()->pluck('id'));
 
         flash()->success('Skills synced');
 

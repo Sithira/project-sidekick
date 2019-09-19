@@ -16,6 +16,25 @@ class UserQualificationController extends Controller
         return view('user.ranking.qualification.index', compact('qualifications'));
     }
 
+    public function create()
+    {
+        return view('user.ranking.qualification.create');
+    }
+
+    public function store(Request $request)
+    {
+
+        $this->validate($request, [
+            'title' => 'required|min:5',
+            'description' => 'required|min:10'
+        ]);
+
+        auth()->user()->qualifications()->create($request->all());
+
+        flash()->success('Experience added successfully');
+
+        return redirect()->back();
+    }
 
     public function edit($id)
     {

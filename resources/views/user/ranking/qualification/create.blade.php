@@ -17,7 +17,7 @@
                     @include('flash::message')
                     @include('error-flash')
 
-                    {!! Form::open(['method' => 'POST', 'url' => route('experience.store')]) !!}
+                    {!! Form::open(['method' => 'POST', 'url' => route('qualifications.store')]) !!}
                     <div class="form-group">
                         <label>Title: </label>
                         {!! Form::text('title', null, ['class' => 'form-control']) !!}

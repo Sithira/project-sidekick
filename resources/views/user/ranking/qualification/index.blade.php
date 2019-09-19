@@ -13,7 +13,7 @@
                     Current Qualifications
 
                     <div class="float-right">
-                        <button class="btn btn-sm btn-primary">Add more</button>
+                        <a href="{!! route('qualifications.create') !!}" class="btn btn-sm btn-primary">Add more</a>
                     </div>
 
                 </div>
