@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="card-body">
-                            {!! Form::open(['method' => 'POST', 'url' => '/']) !!}
+                            {!! Form::open(['method' => 'POST', 'url' => route('questions.reply',  ['id' => $question->id])]) !!}
                             <div class="form-group">
                                 {!! Form::label('body') !!}
                                 {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}
@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="card-body">
-                            {!! Form::open() !!}
+                            {!! Form::open(['method' => 'POST', 'url' => route('questions.answer',  ['id' => $question->id])]) !!}
                             <div class="form-group">
                                 {!! Form::label('body') !!}
                                 {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}

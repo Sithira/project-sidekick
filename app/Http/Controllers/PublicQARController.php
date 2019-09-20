@@ -37,6 +37,7 @@ class PublicQARController extends Controller
 
     }
 
+
     public function byCategory($category)
     {
         return 'bilal sirisena';
@@ -127,13 +128,40 @@ class PublicQARController extends Controller
 
     public function postAnswerForQuestion(Request $request, $id) {
 
+        $this->validate($request, [
+            'body' => 'required|min:5',
+        ]);
+
         $question = Question::findOrFail($id);
 
-        $question->answers()->create($request->all());
+        $question->answers()->create(array_merge($request->all(), ['user_id' => auth()->id()]));
 
         flash()->success('Answer posted successfully');
+
+
+        return redirect()->back();
+
     }
 
+
+    public function replyForQuestion(Request $request, $id)
+    {
+
+        $this->validate($request, [
+            'body' => 'required|min:5',
+        ]);
+
+        $question = Question::findOrFail($id);
+
+        $question->replies()
+            ->create(array_merge($request->all(), ['user_id' => auth()->id()]));
+
+
+        flash()->success('Reply posted successfully');
+
+
+        return redirect()->back();
+    }
 
     public function viewQuestionForm()
     {

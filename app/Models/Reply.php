@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-    protected $fillable = ['title', 'body', 'likes', 'dislikes'];
+    protected $fillable = ['title', 'body', 'likes', 'dislikes', 'question_id', 'answer_id', 'user_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

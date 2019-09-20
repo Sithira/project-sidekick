@@ -47,6 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('forum/question', 'PublicQARController@postQuestion')->name('questions.submit');
     Route::post('forum/question/{id}/answer', 'PublicQARController@postAnswerForQuestion')->name('questions.answer');
+    Route::post('forum/question/{id}/reply', 'PublicQARController@replyForQuestion')->name('questions.reply');
 });
 
 Route::group(['middleware' => ['auth']], function() {

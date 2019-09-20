@@ -1406,7 +1406,6 @@ category_id</ColNames>
     <column id="324" parent="246" name="answer_id">
       <Position>3</Position>
       <DataType>int(10) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="325" parent="246" name="body">
