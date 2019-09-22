@@ -30,7 +30,8 @@ Route::get('/forum/question/{id}', 'PublicQARController@fromQuestionID')
 
 Route::group(['middleware' => 'auth'], function() {
 
-    Route::post('/forum/question/{id}/answer/{subId}/accept', 'PublicQARController@acceptAsAnswer');
+    Route::post('/forum/question/{id}/answer/{subId}/accept', 'PublicQARController@acceptAsAnswer')
+        ->name('accept-answer');
 
     Route::post('/forum/question/{id}/upvote', 'PublicQARController@postUpVoteQuestion')
         ->name('question.upvote');

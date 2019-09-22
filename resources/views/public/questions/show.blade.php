@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-10">
             <div class="card">
                 <div class="card-header">
@@ -93,17 +94,27 @@
 
         </div>
 
-        <br/>
+        <div class="mb-5"></div>
+    </div>
 
-        {{--        <div class="col-2"></div>--}}
+    <div class="row">
         <div class="col-12">
             <h2>Answers</h2>
 
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-10">
-                    @foreach($question->answers as $answer)
-                        <div class="card {!! ($answer->is_answer == 1 ? 'border-success' : '') !!}">
+
+            @foreach($question->answers as $answer)
+                <div class="row">
+                    <div class="col-2">
+                        @if($question->user_id == auth()->id())
+                            {!! Form::open(['method' => 'POST', 'url' => route('accept-answer', ['id' => $question->id, 'subId' => $answer->id])]) !!}
+                                <div class="text-center mt-4">
+                                    {!! Form::submit('Accept', ['class' => 'btn btn-sm btn-success']) !!}
+                                </div>
+                            {!! Form::close() !!}
+                        @endif
+                    </div>
+                    <div class="col-10">
+                        <div class="card mb-3 {!! ($answer->is_answer == 1 ? 'border-success' : '') !!}">
                             <div class="card-body">
 
                                 @if($answer->is_answer)
@@ -116,30 +127,31 @@
                                 {!! $answer->body !!}
                             </div>
                         </div>
-
-                        <div class="mb-3"></div>
-                    @endforeach
-
-                    <br/>
-
-                    <div class="card">
-                        <div class="card-header">
-                            Add an Answer
-                        </div>
-
-                        <div class="card-body">
-                            {!! Form::open(['method' => 'POST', 'url' => route('questions.answer',  ['id' => $question->id])]) !!}
-                            <div class="form-group">
-                                {!! Form::label('body') !!}
-                                {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}
-                            </div>
-
-                            {!! Form::submit('Add comment', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
-                            {!! Form::close() !!}
-                        </div>
                     </div>
+
+                    <div class="mb-3"></div>
+                </div>
+            @endforeach
+
+            <br/>
+
+            <div class="card">
+                <div class="card-header">
+                    Add an Answer
+                </div>
+
+                <div class="card-body">
+                    {!! Form::open(['method' => 'POST', 'url' => route('questions.answer',  ['id' => $question->id])]) !!}
+                    <div class="form-group">
+                        {!! Form::label('body') !!}
+                        {!! Form::textarea('body', null, ['class' => 'form-control', 'rows' => 3]) !!}
+                    </div>
+
+                    {!! Form::submit('Add comment', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

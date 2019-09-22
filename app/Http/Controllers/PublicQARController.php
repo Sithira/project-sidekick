@@ -45,11 +45,12 @@ class PublicQARController extends Controller
 
     public function acceptAsAnswer($id, $subId)
     {
+
         $question = Question::findOrFail($id);
 
         $answer = Answer::findOrFail($subId);
 
-        $answer->update(['is_accepted' => 1]);
+        $answer->update(['is_answer' => 1]);
 
         return redirect()->back();
     }

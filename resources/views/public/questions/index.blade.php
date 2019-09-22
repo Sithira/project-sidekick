@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-center">
-                                            {!! $question->likes !!}
+                                            {!! $question->dislikes !!}
                                             <br/>
                                             <span>
                                             Dislikes

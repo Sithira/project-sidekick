@@ -29,7 +29,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{!! auth()->user()->answers()->count() !!}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-question fa-2x text-gray-300"></i>
+                            <i class="fas fa-thumbs-up fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -43,10 +43,10 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">CodeSquad Points</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{!! \App\Http\PointsService::calculateUserPoints(auth()->user()) !!}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-question fa-2x text-gray-300"></i>
+                            <i class="fas fa-bullseye fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -92,15 +92,15 @@
                             <div class="row">
 
                                 <div class="col-md-6">
-                                    <div class="btn btn-primary btn-block">
+                                    <a href="{!! url('/profile/projects')  !!}" class="btn btn-primary btn-block">
                                         <i class="fas fa-spinner"></i>
                                         View On-going projects
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="btn btn-primary btn-block">
+                                    <a href="javascript:void(0)" class="btn btn-primary btn-block">
                                         <i class="fas fa-check-circle"></i> View Completed projects
-                                    </div>
+                                    </a>
                                 </div>
 
                             </div>
