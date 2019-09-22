@@ -16,7 +16,7 @@ class PeopleController extends Controller
         $people = User::all();
 
         foreach ($people as $person) {
-            return PointsService::calculateUserPoints($person);
+            $person->points = PointsService::calculateUserPoints($person);
         }
 
         return view('public.people.all-people', compact('people'));
