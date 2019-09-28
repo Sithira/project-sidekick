@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>My Experience</h2>
+    <h2>My Qualifications</h2>
 
     <div class="mb-3"></div>
 
